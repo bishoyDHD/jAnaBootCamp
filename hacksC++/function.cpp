@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <map>
+const double Mpi0=.134;
 // Example of different used of a class
 // will have some function in the class that pass
 // different vector arguments
@@ -26,6 +27,21 @@ func::func(){
 }
 func::~func(){
 }
+// New class method for setting and getting 
+// given values
+// Proper usage of class methods
+class checking{
+public:
+  void setVal(double nval){val=nval;};
+  double getVal(){return val;};
+  void readfn();
+private:
+  double val;
+};
+// C++ structure example can be used for anything
+struct newv{
+  double nx, ny, nz;                                                                                                                                           
+};
 // various class functions
 void func::function1(std::vector<double> vect){
   vect.push_back(45.88);
@@ -71,6 +87,21 @@ void glfunc(int n,std::vector<double> &vec){
 // default main function
 int main(){
   std::vector<double> vect;
+  std::map<int,std::pair<double,double>> cmap;
+  std::map<std::pair<double,double>,double> tmap;
+  std::pair<double,double> cpair;
+  checking chk;
+  chk.setVal(30.0);
+  std::cout<<" getting the value from the checking class: "<<chk.getVal()<<"\n";
+  /*
+  for(int n=0;n<4;n++){
+    cpair=std::make_pair(2.2*n,n+0.1);
+    cmap[n]=cpair;
+  }
+  for(int i=0; i<4; i++){
+    tmap[cmap[i]]=2.2+0.1*i;
+  }
+  std::cout<<" ... checking the name"<<tmap[cpair]<<"\n";
   func fn;
   // always a good idea to clear a std::vector
   // i.e emptying the std::vector
@@ -82,11 +113,10 @@ int main(){
   vect.push_back(13.75);
   vect.push_back(72.11);
   // manipulate various functions from the class
-  fn.function2(vect);
+  fn.function1(vect);
   for(unsigned int i=0; i<vect.size(); i++){
     std::cout<<" ... "<<vect[i]<<"\n";
   }
-  /*
   // check case with switch statement
   for(unsigned int i=0; i<vect.size(); i++){
     glfunc(i,vect);
