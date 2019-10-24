@@ -32,8 +32,8 @@ func::~func(){
 // Proper usage of class methods
 class checking{
 public:
-  void setVal(double nval){val=nval;};
-  double getVal(){return val;};
+  inline void setVal(double nval){val=nval;};
+  inline double getVal(){return val;};
   void readfn();
 private:
   double val;
