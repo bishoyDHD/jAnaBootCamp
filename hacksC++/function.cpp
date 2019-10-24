@@ -93,6 +93,10 @@ int main(){
   checking chk;
   chk.setVal(30.0);
   std::cout<<" getting the value from the checking class: "<<chk.getVal()<<"\n";
+  double v1;
+  std::cout<<" enter a value "; std::cin>> v1;
+  chk.setVal(v1);
+  std::cout<<"\n new user set value is "<<chk.getVal()<<"\n";
   /*
   for(int n=0;n<4;n++){
     cpair=std::make_pair(2.2*n,n+0.1);
