@@ -65,6 +65,15 @@ void vectMerge(std::vector<double>& vect1,std::vector<double>& vect2){
        std::make_move_iterator(vect2.end())
        );
 };
+double a,b;// global variable
+void setVal(double x, double y){
+  double m,c;
+  m=x; c=y;
+}
+void getVal(){
+  double m,c;
+  std::cout<<" returning sum of 2 values "<<m+c<<"\n";
+}
 int main(){
   const int nrolls=1000; // number of experiments
   std::default_random_engine gen;
@@ -80,7 +89,9 @@ int main(){
     if((num>0.0)&&(num<10.))++p[int(num)];
     nv.nx=num;   nv.ny=p[i];
     nvec.push_back(nv);
+    setVal(i,i);
   }
+  getVal();
   std::cout<<" ... checking some values before reseting\n";
   std::cout<<" ... nvec[0].nx= "<<nvec[0].nx<<"\t size= "<<nvec.size()<<std::endl;
   nvec.clear();
